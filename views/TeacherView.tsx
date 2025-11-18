@@ -188,7 +188,7 @@ export default function TeacherView({ goHome }: { goHome: () => void; }) {
 
     if (!isLoggedIn) {
         return (
-            <div className="h-full flex flex-col items-center justify-center">
+            <div className="h-full flex flex-col items-center justify-center p-4">
                  <div className="absolute top-4 right-4">
                      <button onClick={goHome} className="text-sm text-gray-600 hover:text-indigo-600">처음으로</button>
                  </div>

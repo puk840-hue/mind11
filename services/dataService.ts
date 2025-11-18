@@ -11,6 +11,31 @@ const simpleHash = (s: string): string => {
   return hash.toString();
 };
 
+// --- API Key Management ---
+export const saveApiKey = (apiKey: string) => {
+    // Simple base64 encoding to obfuscate the key in local storage
+    localStorage.setItem('gemini_api_key', btoa(apiKey));
+};
+
+export const getApiKey = (): string | null => {
+    const encodedKey = localStorage.getItem('gemini_api_key');
+    if (encodedKey) {
+        try {
+            return atob(encodedKey);
+        } catch (e) {
+            console.error("Failed to decode API key:", e);
+            deleteApiKey();
+            return null;
+        }
+    }
+    return null;
+};
+
+export const deleteApiKey = () => {
+    localStorage.removeItem('gemini_api_key');
+};
+
+
 // --- User Management ---
 
 export const getAllUsers = (): User[] => {

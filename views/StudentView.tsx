@@ -282,7 +282,7 @@ export default function StudentView({ goHome }: { goHome: () => void; }) {
 
     if (!currentUser) {
         return (
-            <div className="h-full flex flex-col items-center justify-center">
+            <div className="h-full flex flex-col items-center justify-center p-4">
                  <div className="w-full max-w-sm p-8 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg">
                     <div className="flex justify-between items-center mb-6">
                          <h1 className="text-2xl font-bold text-indigo-800">학생 페이지</h1>
@@ -295,7 +295,7 @@ export default function StudentView({ goHome }: { goHome: () => void; }) {
     }
     
     return (
-        <div className="h-full flex flex-col items-center justify-center">
+        <div className="h-full flex flex-col items-center justify-center p-4">
             {studentView === 'dashboard' && (
                 <div className="text-center p-8 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg max-w-md w-full">
                     <h1 className="text-3xl font-bold text-indigo-800 mb-2">{currentUser.name}님, 환영합니다!</h1>
